@@ -3,6 +3,11 @@
 This project is created as part of Flutter Self learning, it uses Flare by 2 dimensions along woth flutter to recreate the old pen and paper game of Hangman. It uses the avatar of [Filip Hracek](https://twitter.com/filiphracek) from the Flutter and Dart team at Google! 
 The CC for the artworks go to [Juan Carlos](https://www.2dimensions.com/a/JuanCarlos)
 
+
+## How To Play
+
+Guess the word by guessing the letters one by one.
+
 ## SCREENSHOTS
 
 - Winning
