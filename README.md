@@ -1,6 +1,9 @@
+
+![Filip_Hangman](https://github.com/ganeshsp1/flutterHangman/blob/master/assets/icon/hangmanIcon.png)
+
 # Flutter Hangman
 
-This project is created as part of Flutter Self learning, it uses Flare by 2 dimensions along woth flutter to recreate the old pen and paper game of Hangman. It uses the avatar of [Filip Hracek](https://twitter.com/filiphracek) from the Flutter and Dart team at Google! 
+This project is created as part of Flutter Self learning, it uses Flare by [2dimensions](https://www.2dimensions.com) along with flutter to recreate the old pen and paper game of Hangman. It uses the avatar of [Filip Hracek](https://twitter.com/filiphracek) from the Flutter and Dart team at Google! 
 The CC for the artworks go to [Juan Carlos](https://www.2dimensions.com/a/JuanCarlos)
 
 
