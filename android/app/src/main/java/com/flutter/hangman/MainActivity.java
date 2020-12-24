@@ -1,4 +1,4 @@
-package com.example.hangman;
+package com.flutter.hangman;
 
 
 import io.flutter.embedding.android.FlutterActivity;
