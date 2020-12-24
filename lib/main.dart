@@ -72,16 +72,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Random _random = new Random();
-  String _currentWord;
   List<String> _choosenLetters = new List<String>();
-  List<String> _currentwordList = new List<String>();
   String _currentAnimation = "idle";
-  int _wrongCount = -1;
-  int _numberOfTries = 6;
+  String _currentWord;
+  List<String> _currentwordList = new List<String>();
   bool _gameOver = false;
   HangmanController _hangmanController;
+  int _numberOfTries = 6;
+  Random _random = new Random();
   int _score;
+  int _wrongCount = -1;
+
   @override
   void initState() {
     _currentWord = nouns[_random.nextInt(nouns.length)];
@@ -92,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _score = _getScore();
         super.initState();
       }
-    
+
       void _incrementCounter() {
         setState(() {
           _currentWord = nouns[_random.nextInt(nouns.length)];
@@ -103,7 +104,33 @@ class _MyHomePageState extends State<MyHomePage> {
           _gameOver = false;
         });
       }
-    
+
+      bool _hasWon() {
+        if (_currentwordList.isEmpty || _choosenLetters.isEmpty) {
+          return false;
+        }
+        bool _hasWonBool = true;
+        _currentwordList.forEach((eachletter) {
+          if (!_choosenLetters.contains(eachletter.toUpperCase())) {
+            _hasWonBool = false;
+          }
+        });
+        if (_hasWonBool) {
+          _gameOver = true;
+        }
+        if (_hasWonBool) {
+          setState(() {
+            // _currentAnimation = "won";
+            _hangmanController.enqueueAnimation("won");
+          });
+        }
+        return _hasWonBool;
+      }
+
+      int _getScore() {
+
+      }
+
       @override
       Widget build(BuildContext context) {
         return Scaffold(
@@ -226,31 +253,5 @@ class _MyHomePageState extends State<MyHomePage> {
           ),      
           drawer: CustomDrawer(_currentWord),
         );
-      }
-    
-      bool _hasWon() {
-        if (_currentwordList.isEmpty || _choosenLetters.isEmpty) {
-          return false;
-        }
-        bool _hasWonBool = true;
-        _currentwordList.forEach((eachletter) {
-          if (!_choosenLetters.contains(eachletter.toUpperCase())) {
-            _hasWonBool = false;
-          }
-        });
-        if (_hasWonBool) {
-          _gameOver = true;
-        }
-        if (_hasWonBool) {
-          setState(() {
-            // _currentAnimation = "won";
-            _hangmanController.enqueueAnimation("won");
-          });
-        }
-        return _hasWonBool;
-      }
-    
-      int _getScore() {
-
       }
 }

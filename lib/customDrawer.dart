@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget{
-  String _currentWord;
+  final String _currentWord;
   CustomDrawer(this._currentWord);
   @override
   Widget build(BuildContext context) {
